@@ -6,11 +6,12 @@ import java.util.stream.Collectors;
 import toys.Car;
 import toys.Helicopter;
 import toys.SerialNumberGenerator;
+import toys.ToyBusiness;
 
 public class KATA6 {
     
     public static void main(String[] args) {
-        SerialNumberGenerator generator = new SerialNumberGenerator();
+       ToyBusiness toyBusiness = new ToyBusiness();
         ArrayList<Car> cars = new ArrayList();
         ArrayList<Helicopter> helicopters = new ArrayList();
         
@@ -21,18 +22,10 @@ public class KATA6 {
             line = in.nextLine();
             switch (line){
                 case "car":
-                    Car car = new Car(generator.next());
-                    car.pack();
-                    car.label();
-                    cars.add(car);
-                    System.out.printf("New '%s' with S/N '%d' built\n", car.getType(), car.getSerialNumber());
+                    cars.add(toyBusiness.createCar());
                     break;
                 case "helicopter":
-                    Helicopter helicopter = new Helicopter(generator.next());
-                    helicopter.pack();
-                    helicopter.label();
-                    helicopters.add(helicopter);
-                    System.out.printf("New '%s' with S/N '%d' built\n", helicopter.getType(), helicopter.getSerialNumber());
+                    helicopters.add(toyBusiness.createHelicopter());
                     break;
                 case "list":
                     System.out.println("Built cars: " + cars.stream()
