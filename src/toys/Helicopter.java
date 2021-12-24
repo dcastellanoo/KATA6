@@ -1,10 +1,10 @@
 package toys;
 
-public class Car {
-    private final Integer serialNumber;
-    private final String type = "Car";
+public class Helicopter {
+   private final Integer serialNumber;
+   private final String type = "Helicopter";
 
-    public Car(Integer serialNumber) {
+    public Helicopter(Integer serialNumber) {
         this.serialNumber = serialNumber;
     }
 
@@ -15,8 +15,7 @@ public class Car {
     public String getType() {
         return type;
     }
-    
-    
+   
     public void pack(){
         System.out.printf("Packing '%s' with S/N '%d'\n", this.getType(), this.getSerialNumber());
     }
@@ -24,5 +23,4 @@ public class Car {
     public void label(){
         System.out.printf("Labeling '%s' with S/N '%d'\n", this.getType(), this.getSerialNumber());
     }
-    
 }
