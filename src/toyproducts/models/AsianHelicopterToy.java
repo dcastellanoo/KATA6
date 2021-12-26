@@ -2,15 +2,15 @@ package toyproducts.models;
 
 import toyproducts.Toy;
 
-public class CarToy implements Toy {
-    private final Integer serialNumber;
-    private final String type = "Car";
+public class AsianHelicopterToy implements Toy{
+   private final Integer serialNumber;
+   private final String type = "Asian Helicopter";
 
-    public CarToy(Integer serialNumber) {
+    public AsianHelicopterToy(Integer serialNumber) {
         this.serialNumber = serialNumber;
     }
 
-    @Override
+   @Override
     public Integer getSerialNumber() {
         return serialNumber;
     }
@@ -18,22 +18,21 @@ public class CarToy implements Toy {
     public String getType() {
         return type;
     }
-    
-    @Override
+   
+   @Override
     public void pack(){
         System.out.printf("Packing '%s' with S/N '%d'\n", this.getType(), this.getSerialNumber());
     }
     
-    @Override
+   @Override
     public void label(){
         System.out.printf("Labeling '%s' with S/N '%d'\n", this.getType(), this.getSerialNumber());
     }
 
     @Override
     public String toString() {
-        return "CarToy{" + "serialNumber=" + serialNumber + '}';
+        return "AsianHelicopterToy{" + "serialNumber=" + serialNumber +'}';
     }
-    
     
     
 }

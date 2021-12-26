@@ -1,13 +1,13 @@
-package toys;
+package branches;
 
+import business.*;
 import toyproducts.Toy;
-import toyproducts.models.CarToy;
-import toyproducts.models.HelicopterToy;
+import toyproducts.models.AmericanCarToy;
+import toyproducts.models.AmericanHelicopterToy;
 
-public class ToyBusiness {
-    public final SerialNumberGenerator serialNumberGenerator 
-            = new SerialNumberGenerator();
+public class AmericanToyBusiness extends ToyBusiness {
     
+    @Override
     public Toy createToy(String type){
        switch(type) {
            case "car":
@@ -19,16 +19,16 @@ public class ToyBusiness {
        } 
     }
     
-    private CarToy createCar(){
-        CarToy car = new CarToy(this.serialNumberGenerator.next());
+    private AmericanCarToy createCar(){
+        AmericanCarToy car = new AmericanCarToy(super.serialNumberGenerator.next());
         car.pack();
         car.label();
         System.out.printf("New '%s' with S/N '%d' built\n", car.getType(), car.getSerialNumber());
         return car;
     }
     
-    private HelicopterToy createHelicopter(){
-        HelicopterToy helicopter = new HelicopterToy(this.serialNumberGenerator.next());
+    private AmericanHelicopterToy createHelicopter(){
+        AmericanHelicopterToy helicopter = new AmericanHelicopterToy(super.serialNumberGenerator.next());
         helicopter.pack();
         helicopter.label();
         System.out.printf("New '%s' with S/N '%d' built\n", helicopter.getType(), helicopter.getSerialNumber());
