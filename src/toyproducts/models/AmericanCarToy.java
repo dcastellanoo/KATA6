@@ -15,6 +15,7 @@ public class AmericanCarToy implements Toy {
         return serialNumber;
     }
 
+    @Override
     public String getType() {
         return type;
     }

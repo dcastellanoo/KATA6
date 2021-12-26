@@ -1,13 +1,11 @@
-package branches;
+package factories.regionalfactories;
 
-import business.*;
+import factories.ToyFactory;
 import toyproducts.Toy;
-import toyproducts.models.AmericanCarToy;
-import toyproducts.models.AmericanHelicopterToy;
 import toyproducts.models.AsianCarToy;
 import toyproducts.models.AsianHelicopterToy;
 
-public class AsianToyBusiness extends ToyBusiness {
+public class AsianToyFactory extends ToyFactory {
     
     @Override
     public Toy createToy(String type){
@@ -23,17 +21,11 @@ public class AsianToyBusiness extends ToyBusiness {
     
     private AsianCarToy createCar(){
         AsianCarToy car = new AsianCarToy(super.serialNumberGenerator.next());
-        car.pack();
-        car.label();
-        System.out.printf("New '%s' with S/N '%d' built\n", car.getType(), car.getSerialNumber());
         return car;
     }
     
     private AsianHelicopterToy createHelicopter(){
         AsianHelicopterToy helicopter = new AsianHelicopterToy(super.serialNumberGenerator.next());
-        helicopter.pack();
-        helicopter.label();
-        System.out.printf("New '%s' with S/N '%d' built\n", helicopter.getType(), helicopter.getSerialNumber());
         return helicopter;
     }
 }

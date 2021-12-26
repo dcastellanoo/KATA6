@@ -15,6 +15,7 @@ public class AmericanHelicopterToy implements Toy{
         return serialNumber;
     }
 
+   @Override
     public String getType() {
         return type;
     }
